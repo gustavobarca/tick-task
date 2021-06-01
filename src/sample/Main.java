@@ -9,17 +9,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class Main extends Application {
-    public Scene Scene(Parent root) {
-        return new Scene(root, 400, 400, Color.WHITE);
-    }
-
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("ui/sample.fxml"));
-
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("ui/resources/home.fxml"));
         primaryStage.initStyle(StageStyle.UNIFIED);
         primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(Scene(root));
+        primaryStage.setScene(new Scene(root, 400, 400, Color.WHITE));
         primaryStage.show();
     }
 
