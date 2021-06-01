@@ -1,4 +1,4 @@
-package sample.domain.task;
+package sample.domain;
 
 import java.util.Date;
 import java.util.UUID;
@@ -12,6 +12,12 @@ public class Entry {
         this.isStart = isStart;
         this.id = UUID.randomUUID();
         this.datetime = new Date();
+    }
+
+    public Entry(UUID id, boolean isStart, Date datetime) {
+        this.id = UUID.randomUUID();
+        this.isStart = isStart;
+        this.datetime = datetime;
     }
 
     public boolean isStart() {

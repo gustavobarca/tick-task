@@ -1,6 +1,4 @@
-package sample.domain.task;
-
-import sample.domain.tag.Tag;
+package sample.domain;
 
 import java.util.Stack;
 import java.util.UUID;
@@ -11,12 +9,12 @@ public class Task {
     private TaskStatus status;
     private double estimatedTime;
     private Stack<Entry> entries;
-    private Tag tag;
 
     public Task(String title, double estimatedTime) {
         id = UUID.randomUUID();
         status = TaskStatus.TO_DO;
         this.estimatedTime = estimatedTime;
+        this.entries = new Stack<Entry>();
         this.title = title;
     }
 
@@ -24,6 +22,7 @@ public class Task {
         id = id;
         this.status = TaskStatus.TO_DO;
         this.estimatedTime = estimatedTime;
+        this.entries = new Stack<Entry>();
         this.title = title;
     }
 
@@ -64,12 +63,8 @@ public class Task {
         entries.push(entry);
     }
 
-    public Tag getTag() {
-        return tag;
-    }
-
-    public void setTag(Tag tag) {
-        this.tag = tag;
+    public void setEntries(Stack<Entry> entries) {
+        this.entries = entries;
     }
 
     public double getElapsedTime() {

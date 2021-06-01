@@ -1,4 +1,4 @@
-package sample.domain.task;
+package sample.domain;
 
 public enum TaskStatus {
     TO_DO,
